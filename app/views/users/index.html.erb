@@ -1,0 +1,29 @@
+<h1>Usuarios</h1>
+
+<%= link_to "Crear nuevo usuario", users_new_path, :class => "btn btn-primary" %>
+<br>
+<table class="table">	
+	<tr>
+		<thead>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Genero</th>
+			<th>Edad</th>
+			
+		</thead>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.name %></td>
+		<td><%= user.lastname %></td>
+		<td><%= user.gender %></td>
+		<td><%= user.age %></td>
+		<td>
+			<%= link_to "Mostrar", edit_user_path(user), :class => "btn btn-primary"  %>
+			<%= link_to "Actualizar", edit_user_path(user), :class => "btn btn-primary"  %>
+			<%= link_to "Eliminar", user, method: :delete, data: { confirm: " ¿Deseas eliminar el usuario? " }, :class => "btn btn-primary" %>
+		</td>
+
+	</tr>
+	<% end %>
+</table>	

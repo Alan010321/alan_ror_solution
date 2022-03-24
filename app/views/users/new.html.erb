@@ -1,0 +1,36 @@
+<h1>Ingrese los datos del usuario</h1>
+
+<%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+<div class="form-group">
+	<%= f.label :name, "Nombre:", class: "col-md-4 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :name, class: "form-control" %>
+	</div>	
+</div>
+<div class="form-group">
+	<%= f.label :lastname, "Apellidos:", class: "col-md-4 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :lastname, class: "form-control" %>
+	</div>
+</div>
+<div class="form-group">
+	<%= f.label :gender, "Género:", class: "col-md-4 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :gender, class: "form-control" %>
+	</div>
+</div>
+<div class="form-group">
+	<%= f.label :age, "Edad:", class: "col-md-4 control-label" %>
+	<div class="col-md-8">
+	<%= f.number_field :age, class: "form-control" %>
+	</div>		
+</div>
+	<br>	
+<div class="form-group">
+	<%= f.submit "Guardar", class: "btn btn-default btn-primary" %>	
+	
+	<%= link_to "Regresar", users_path, :class => " btn btn-primary" %>
+	
+</div>
+
+<% end %>
